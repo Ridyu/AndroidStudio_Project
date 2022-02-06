@@ -1,0 +1,338 @@
+package com.example.calculator;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView text1;
+    EditText edit1;
+
+    Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
+    Button add, sub, multy, devine, equal;
+    Button sin, cos, tan;
+    Button clear, clearAll;
+
+    private int arg;            //값 대체자
+    private int point = 0;       //연산자 저장체
+    private int value;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        text1 = findViewById(R.id.text);
+        text1.setText("");
+
+        edit1 = findViewById(R.id.editText);
+
+        btn0 = findViewById(R.id.button0);
+        btn1 = findViewById(R.id.button1);
+        btn2 = findViewById(R.id.button2);
+        btn3 = findViewById(R.id.button3);
+        btn4 = findViewById(R.id.button4);
+        btn5 = findViewById(R.id.button5);
+        btn6 = findViewById(R.id.button6);
+        btn7 = findViewById(R.id.button7);
+        btn8 = findViewById(R.id.button8);
+        btn9 = findViewById(R.id.button9);
+
+        add = findViewById(R.id.add);
+        sub = findViewById(R.id.sub);
+        multy = findViewById(R.id.multy);
+        devine = findViewById(R.id.devine);
+        equal = findViewById(R.id.equal);
+
+        sin = findViewById(R.id.sin);
+        cos = findViewById(R.id.cos);
+        tan = findViewById(R.id.tan);
+
+        clear = findViewById(R.id.clear);
+        clearAll = findViewById(R.id.clerarAll);
+
+        btn0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    return;
+
+                input = input + "0";
+                edit1.setText(input);
+            }
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "1";
+                else
+                    input = input + "1";
+                edit1.setText(input);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "2";
+                else if(input.equals("1"))
+                    input = input + "1";
+                else
+                    input = input + "2";
+                edit1.setText(input);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "3";
+                else if(input.equals("1"))
+                    input = input + "2";
+                else if(input.equals("2"))
+                    input = input + "1";
+                else
+                    input = input + "3";
+                edit1.setText(input);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "4";
+                else if(input.equals("1"))
+                    input = input + "3";
+                else if(input.equals("2"))
+                    input = input + "2";
+                else if(input.equals("3"))
+                    input = input + "1";
+                else
+                    input = input + "4";
+                edit1.setText(input);
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "5";
+                else if(input.equals("1"))
+                    input = input + "4";
+                else if(input.equals("2"))
+                    input = input + "3";
+                else if(input.equals("3"))
+                    input = input + "2";
+                else if(input.equals("4"))
+                    input = input + "1";
+                else
+                    input = input + "5";
+                edit1.setText(input);
+            }
+        });
+
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "6";
+                else if(input.equals("1"))
+                    input = input + "5";
+                else if(input.equals("2"))
+                    input = input + "4";
+                else if(input.equals("3"))
+                    input = input + "3";
+                else if(input.equals("4"))
+                    input = input + "2";
+                else if(input.equals("5"))
+                    input = input + "1";
+                else
+                    input = input + "6";
+                edit1.setText(input);
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "7";
+                else if(input.equals("1"))
+                    input = input + "6";
+                else if(input.equals("2"))
+                    input = input + "5";
+                else if(input.equals("3"))
+                    input = input + "4";
+                else if(input.equals("4"))
+                    input = input + "3";
+                else if(input.equals("5"))
+                    input = input + "2";
+                else if(input.equals("6"))
+                    input = input + "1";
+                else
+                    input = input + "7";
+                edit1.setText(input);
+            }
+        });
+
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "8";
+                else if(input.equals("1"))
+                    input = input + "7";
+                else if(input.equals("2"))
+                    input = input + "6";
+                else if(input.equals("3"))
+                    input = input + "5";
+                else if(input.equals("4"))
+                    input = input + "4";
+                else if(input.equals("5"))
+                    input = input + "3";
+                else if(input.equals("6"))
+                    input = input + "2";
+                else if(input.equals("7"))
+                    input = input + "1";
+                else
+                    input = input + "8";
+                edit1.setText(input);
+            }
+        });
+
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = edit1.getText().toString();
+                if(input.equals("0"))
+                    input = "9";
+                else if(input.equals("1"))
+                    input = input + "8";
+                else if(input.equals("2"))
+                    input = input + "7";
+                else if(input.equals("3"))
+                    input = input + "6";
+                else if(input.equals("4"))
+                    input = input + "5";
+                else if(input.equals("5"))
+                    input = input + "4";
+                else if(input.equals("6"))
+                    input = input + "3";
+                else if(input.equals("7"))
+                    input = input + "2";
+                else if(input.equals("8"))
+                    input = input + "1";
+                else
+                    input = input + "9";
+                edit1.setText(input);
+            }
+        });
+
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//              arg = Integer.parseInt(edit1.getText().toString());
+//              edit1.setText("+");
+                if(v == add) {
+                    arg = Integer.valueOf(edit1.getText().toString());
+                    edit1.setText("+");
+                    point = 1;
+                }
+            }
+        });
+
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == sub) {
+                    arg = Integer.valueOf(edit1.getText().toString());
+                    edit1.setText("-");
+                    point = 2;
+                }
+            }
+        });
+
+        multy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v == multy) {
+                    arg = Integer.valueOf(edit1.getText().toString());
+                    edit1.setText("X");
+                    point = 3;
+                }
+            }
+        });
+
+        devine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v==devine) {
+                    arg = Integer.valueOf(edit1.getText().toString());
+                    edit1.setText("%");
+                    point = 4;
+                }
+            }
+        });
+
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   if(point == 1){
+                       arg = arg + Integer.valueOf(edit1.getText().toString());
+                       text1.setText(Integer.toString(arg));
+                   }
+                   else if(point == 2){
+                       arg = arg - Integer.valueOf(edit1.getText().toString());
+                       text1.setText(Integer.toString(arg));
+                   }
+                   else if(point == 3){
+                       arg = arg * Integer.valueOf(edit1.getText().toString());
+                       text1.setText(Integer.toString(arg));
+                   }
+                   else if(point == 4){
+                       arg = arg / Integer.valueOf(edit1.getText().toString());
+                       text1.setText(Integer.toString(arg));
+                   }
+            }
+        });
+
+//        clearAll.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                edit1.setText(" ");
+////                text1.setText(" ");
+////            }
+////        });
+
+
+
+//        int current = Integer.parseInt(edit1.getText().toString());
+//        Integer result = arg + current;
+//        text1.setText(" " +result);
+
+
+
+
+
+    }
+}
